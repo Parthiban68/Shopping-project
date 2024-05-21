@@ -1,10 +1,12 @@
 const express = require('express')
 const route=express.Router()
-const {signup} = require('../controllers/UserController')
-const bodyparser = require('body-parser')
+const {signup,activate,signin} = require('../controllers/UserController')
 
-route.use(bodyparser.json())
 
 route.post("/signup",signup)
+route.get(`/activate/:activationCode`,activate)
+route.post('/signin',signin)
+
+
 
 module.exports=route
