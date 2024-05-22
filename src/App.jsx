@@ -9,6 +9,7 @@ import Sports from './component/Sports'
 import Outlet from './component/Outlet'
 import SignUp from './component/SignUp'
 import AddCart from './component/AddCart'
+import Login from './component/Login'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/kids' element={<Kids/>}/>
       <Route path='/sports' element={<Sports/>}/>
       <Route path='/outlet' element={<Outlet/>}/>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/addcart' element={<AddCart/>}/>
     </Routes>

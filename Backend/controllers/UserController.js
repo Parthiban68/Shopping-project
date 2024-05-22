@@ -82,10 +82,8 @@ exports.signin = async(req,res)=>{
         return res.status(400).json({message:"Email not found"})
     }
 
-    const isMatching = await bcrypt.compare("req.body.password",user.password)
-    console.log(isMatching);
-    console.log(password);
-    console.log(user.password);
+    const isMatching = await bcrypt.compare("password",user.password)
+
 
     if(!isMatching){
         return res.status(400).json({message:"Incorrect password"})
