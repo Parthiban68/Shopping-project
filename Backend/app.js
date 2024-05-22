@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require('./config/db');
 const user = require('./routes/user')
+const admin = require('./routes/Admin')
 const product = require('./routes/Product')
 require('dotenv').config()
 const app = express()
@@ -19,6 +20,8 @@ app.use("/user",user)
 //product details
 app.use("/product",product)
 
+//admin login & dashboard
+app.use('/admin',admin)
 
 app.get('/',(req,res)=>{
     res.send("home page")
