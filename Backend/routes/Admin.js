@@ -1,8 +1,8 @@
 const express = require('express')
 const route=express.Router()
-const {adminsigup, adminactivate,adminsignin}=require('../controllers/AdminController')
+const {adminsignup, adminactivate,adminsignin}=require('../controllers/AdminController')
 
-route.post('/adminsigup',adminsigup)
+route.post('/adminsigup',adminsignup)
 route.get(`adminactivate/:activationCode`,adminactivate)
 route.post('/adminsignin',adminsignin)
 

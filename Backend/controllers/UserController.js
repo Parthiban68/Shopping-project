@@ -73,7 +73,7 @@ exports.activate= async(req,res)=>{
     res.status(200).json({message:"Account activation successfull"})
 }
 
-exports.signin = async(req,res)=>{
+exports.signin = async (req,res)=>{
     const { email, password } = req.body
 
     let user = await UserModel.findOne({email})
