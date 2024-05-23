@@ -35,6 +35,10 @@ const ProductSchema = new mongoose.Schema({
     delret:{
         type:String,
         require:true
+    },
+    poster:{
+        type:String,
+        require:true
     }
 })
 
