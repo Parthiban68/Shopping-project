@@ -84,7 +84,7 @@ exports.signin = async (req,res)=>{
 
     const isMatching = await bcrypt.compare("password",user.password)
 
-
+ console.log(isMatching);
     if(!isMatching){
         return res.status(400).json({message:"Incorrect password"})
     }
@@ -93,6 +93,6 @@ exports.signin = async (req,res)=>{
         return res.status(400).json({message:"Account not yet activated.Please activate before login"})
     }
 
-    return res.status(200).json({message:"Login Successfull", user})
+    return res.status(200).json({message:"Login successful", user})
 
 }

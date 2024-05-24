@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
-import { NavLink, Navigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from "./Auth";
 
 
@@ -13,29 +13,31 @@ const Signin = () => {
     const [userlist, setuserlist] = useState([])
 
     const auth = useAuth()
+    const navigate = useNavigate();
 
 
     const handlelogin = (e) => {
         e.preventDefault()
         axios.post(`http://localhost:3001/user/signin`,{email, password})
-            .then(res => { setuserlist(res.data.user)})
-            .catch(err => { console.log(err) })
-          console.log(userlist);
-
-        if (userlist) {
-            console.log("if");
-            if (userlist.email === email) {
-                auth.login(user.name)
-                Navigate("/")
-                console.log("hi");
+        .then((res) => {
+            console.log(res);
+            if (res.status === 200 && res.data.message == "Login successful") {
+              auth.login({ name: res.data.user.name, email: res.data.user.email });
+              if (res.data.user.email === "parthiban1268@gmail.com") {
+                navigate("/mens");
+              } else {
+                navigate("/men");
+              }
             }
-            else {
-                seterrmessage("Incorrect Password")
+          })
+          .catch((err) => {
+            console.log(err.response);
+            if (err.response) {
+              seterrmessage(err.response.data.message);
+            } else {
+              seterrmessage("An error occurred. Please try again.");
             }
-        }
-        else {
-            seterrmessage("User not found")
-        }
+          });
 
     }
 

@@ -10,11 +10,13 @@ import Outlet from './component/Outlet'
 import SignUp from './component/SignUp'
 import AddCart from './component/AddCart'
 import Login from './component/Login'
+import AuthProvider  from "./component/Auth";
 
 function App() {
 
   return (
     <BrowserRouter>
+    <AuthProvider>
     <NavBar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
@@ -27,6 +29,7 @@ function App() {
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/addcart' element={<AddCart/>}/>
     </Routes>
+    </AuthProvider>
     </BrowserRouter>
   )
 }
