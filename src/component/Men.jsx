@@ -23,9 +23,15 @@ function Men() {
     <div>
    <ul>
         {data.map((item) => (
-          <li key={item.id}>
-            {item.poster}
-          </li>
+          <div key={item.id}>
+            <h1>{item.shoemodel}</h1>
+            <h2>{item.gender}</h2>
+            <h1>{item.mrp}</h1>
+            <img src={item.poster}/>
+            <p>{item.description}</p>
+            <p>{item.color}</p>
+            <p>{item.prdinfo}</p>
+          </div>
         ))}
       </ul>
     </div>
