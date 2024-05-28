@@ -5,8 +5,8 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from "./Auth";
 
 
-//login Page functons
-const Signin = () => {
+const Login = () => {
+
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const [errmessage, seterrmessage] = useState('')
@@ -26,7 +26,7 @@ const Signin = () => {
               if (res.data.user.email === "parthiban1268@gmail.com") {
                 navigate("/mens");
               } else {
-                navigate("/men");
+                navigate("/mens");
               }
             }
           })
@@ -43,110 +43,51 @@ const Signin = () => {
 
     return (
 
-        <div className="p-2 m-9">
-            <h1 className="text-[30px] flex justify-center align-center">User Login</h1>
-            <div className="flex flex-col mt-2">
-                <label className="mt-3">Email</label>
-                <input type="email" id="loin-input-email" placeholder="Enter Your Email" onChange={(e) => { setemail(e.target.value) }} />
-                <label className="mt-3">Password</label>
-                <input type="password" id="loin-input-password" placeholder="Enter Your Password" onChange={(e) => { setpassword(e.target.value) }} />
-                <div className="flex justify-center align-center">
-                    <button className="mt-3 bg-zinc-900 p-1 rounded-2xl text-white" onClick={handlelogin}>Login now</button>
+            <main className="w-full h-screen flex flex-col items-center justify-center px-4">
+            <div className="max-w-sm w-full text-gray-600">
+                <div className="text-center">
+                    <div className="mt-5 space-y-2">
+                        <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Log in to your account</h3>
+                        <p className="">Don't have an account? <NavLink to={"/signup"} className="font-medium text-indigo-600 hover:text-indigo-500">Sign up</NavLink></p>
+                    </div>
                 </div>
-
-                {errmessage}
-            </div>
-            <div className='px-5 mt-5'>
-                <p>create your new account!
-                            <button >
-                            <NavLink to={"/signup"}>SignUp</NavLink>
-                            </button>
-                            </p>
-            </div>
-        </div>
-    );
-}
-
-const AdminLogin = () => {
-    const [email, setemail] = useState('')
-    const [password, setpassword] = useState('')
-    const [errmessage, seterrmessage] = useState('')
-    const [userlist, setuserlist] = useState([])
-
-    const auth = useAuth()
-
-
-    const handlelogin = (e) => {
-        e.preventDefault()
-        axios.post(`http://localhost:3001/user/signin`,{email, password})
-            .then(res => { setuserlist(res.data.user)})
-            .catch(err => { console.log(err) })
-          console.log(userlist);
-
-        if (userlist) {
-            console.log("if");
-            if (userlist.email === email) {
-                auth.login(user.name)
-                Navigate("/")
-                console.log("hi");
-            }
-            else {
-                seterrmessage("Incorrect Password")
-            }
-        }
-        else {
-            seterrmessage("User not found")
-        }
-
-    }
-
-    return (
-
-        <div className="p-2 m-9">
-            <h1 className="text-[30px] flex justify-center align-center">Admin Login</h1>
-            <div className="flex flex-col mt-2">
-                <label className="mt-3">Email</label>
-                <input type="email" id="loin-input-email" placeholder="Enter Your Email" onChange={(e) => { setemail(e.target.value) }} />
-                <label className="mt-3">Password</label>
-                <input type="password" id="loin-input-password" placeholder="Enter Your Password" onChange={(e) => { setpassword(e.target.value) }} />
-                <div className="flex justify-center align-center">
-                    <button className="mt-3 bg-zinc-900 p-1 rounded-2xl text-white" onClick={handlelogin}>Login now</button>
-                </div>
-
-                {errmessage}
-            </div>
-        </div>
-    );
-}
-
-
-
-
-const Login = () => {
-
-    const [active, setActive] = useState("false")
-
-    return (  
-        <div style={{ height: "450px", width: "500px", border: "2px solid black", marginLeft: "390px" }} className="mt-[70px] rounded-2xl">
-        <div className="mt-4 px-9">
-                {active ? (
+                <form onSubmit={handlelogin}  className="mt-8 space-y-5" >
                     <div>
-                            <button onClick={() => { setActive(!active) }} className='bg-black rounded-2xl p-2 text-white'>
-                                {active ? ("Admin Login") : ("User Login")}
-                            </button>
-                    </div>) : (
+                        <label className="font-medium">Email </label>
+                    <input
+                            type="email"
+                            required
+                            onChange={(e) => { setemail(e.target.value) }}
+                            className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border
+                             focus:border-indigo-600 shadow-sm rounded-lg"
+                        />
+                    </div>
                     <div>
-                            <button onClick={() => { setActive(!active) }} className='bg-black rounded-2xl p-2 text-white'>
-                            {active ? ("Admin Login") : ("User Login")}
-                            </button>
-                    </div>)}
-                    
+                        <label className="font-medium">
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            required
+                            onChange={(e) => { setpassword(e.target.value) }}
+                            className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none
+                             border focus:border-indigo-600 shadow-sm rounded-lg"
+                        />
+                    </div>
+                    <button
+                        className="w-full px-4 py-2 text-white font-medium bg-indigo-600
+                         hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+                    >
+                        Sign in
+                    </button>
+                    <div className="text-center">
+                        <NavLink className="hover:text-indigo-600">Forgot password?</NavLink>
+                    </div>
+                </form>
             </div>
-            <h1>{active ? (<Signin />) : (<AdminLogin/>)}</h1>
-            
-        </div>
-
-    )
+        </main>
+       
+    );
 }
 
 export default Login

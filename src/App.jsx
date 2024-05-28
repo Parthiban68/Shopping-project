@@ -11,6 +11,7 @@ import SignUp from './component/SignUp'
 import AddCart from './component/AddCart'
 import Login from './component/Login'
 import AuthProvider  from "./component/Auth";
+import ProductDetails from './component/ProductDetails'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/addcart' element={<AddCart/>}/>
+      <Route path='/pd/:id' element={<ProductDetails/>}/>
     </Routes>
     </AuthProvider>
     </BrowserRouter>
