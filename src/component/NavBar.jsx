@@ -21,7 +21,7 @@ function NavBar() {
                 <div className='px-[60px] '>
                     <div className='flex'>
                         <input type='text' placeholder='Search...' />
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i className="fa-solid fa-magnifying-glass"></i></button>
                         <NavLink to={"/login"} className="px-4"><i class="fa-solid fa-user"></i></NavLink>
                         <NavLink to={"/addcart"} ><i class="fa-solid fa-cart-plus"></i></NavLink>
                     </div>
