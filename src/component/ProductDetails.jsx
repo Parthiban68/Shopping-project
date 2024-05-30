@@ -55,7 +55,7 @@ const ProductDetails = () => {
       setData(response.data.data)
 
     } catch (error) {
-
+       console.log(error);
     }
 
   }

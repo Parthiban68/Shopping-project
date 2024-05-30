@@ -23,6 +23,8 @@ app.use("/product",product)
 //admin login & dashboard
 app.use('/admin',admin)
 
+
+// test url
 app.get('/',(req,res)=>{
     res.send("home page")
 })

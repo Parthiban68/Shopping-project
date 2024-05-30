@@ -30,6 +30,18 @@ exports.productDetails = async (req, res) => {
         console.log(error);
 
     }
-
-
 }
+
+exports.editItem = async (req, res) =>{
+    try{
+        const _id = req.params 
+        const edit = await ProductModel.find({_id})
+        res.status(200).json({message:"Data send", edit})
+        // console.log(edit);
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+
