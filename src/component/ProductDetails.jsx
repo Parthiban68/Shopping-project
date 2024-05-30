@@ -42,7 +42,7 @@ import axios from 'axios'
 
 const ProductDetails = () => {
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([{}])
 
   const { _id } = useParams()
 
@@ -52,9 +52,6 @@ const ProductDetails = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(`${url}${_id}`)
-
-      console.log(response);
-
       setData(response.data.data)
 
     } catch (error) {
@@ -65,14 +62,22 @@ const ProductDetails = () => {
 
   useEffect(() => {
     fetchData()
-  }, [])
-
-  console.log("data", data);
+  }, [])  
   return (
     <div>
       <ul>
         {data.map((item) => (
-          <li>{item._id}</li>
+          <>
+           <li>{item._id}</li>
+         <img src={item.poster}/> 
+          <h1>{item.shoemodel}</h1>
+          <h1>{item.
+mrp}</h1>
+          <h1>{item.gender}</h1>
+          <h1>{item.description}</h1>
+          <h1>{item.color}</h1>
+          </>
+         
         ))}
       </ul>
 

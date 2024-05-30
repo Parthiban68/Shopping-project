@@ -22,7 +22,7 @@ exports.productDetails = async (req, res) => {
     try {
         const _id = req.params
 
-        const user = await ProductModel.findOne(_id)
+        const user = await ProductModel.find({_id})
 
         res.status(200).json({ message: "data feched", data: user })
         console.log(user);
