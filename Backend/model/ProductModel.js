@@ -39,6 +39,11 @@ const ProductSchema = new mongoose.Schema({
     poster:{
         type:String,
         require:true
+    },
+    stock:{
+        type:String,
+        require:true,
+        default:"Instock"
     }
 })
 

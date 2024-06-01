@@ -10,7 +10,7 @@ exports.adminsignup = async(req,res)=>{
 
     let admin = await AdminModel.findOne({email})
 
-    if(user){
+    if(admin){
         return res.status(400).json({message:"mail id already registered"})
     }
 
@@ -20,13 +20,13 @@ exports.adminsignup = async(req,res)=>{
     const hashpassword = await bcrypt.hash("password",salt)
 
     admin = AdminModel({
-        username,
+        adminname,
         email,
         password:hashpassword,
         activationCode
     })
 
-    await user.save()
+    await admin.save()
 
     // mail 
 
@@ -39,7 +39,7 @@ exports.adminsignup = async(req,res)=>{
         }
     })
 
-    const activationlink = `http://localhost:${process.env.port}/user/activate/${activationCode}`
+    const activationlink = `http://localhost:${process.env.port}/admin/adminactivate/${activationCode}`
 
     const mailoption ={
         from:process.env.email_id,
@@ -64,8 +64,8 @@ exports.adminactivate= async(req,res)=>{
     const {activationCode}=req.params
     console.log(activationCode)
     let admin = await AdminModel.findOne({activationCode})
-    if(!user){
-       return res.status(500).json({message:"cannot send activation link"})
+    if(!admin){
+       return res.status(500).json({message:"cannot activate the account"})
     }
 
     user.isActivated=true
@@ -78,18 +78,18 @@ exports.adminsignin = async(req,res)=>{
 
     let admin = await AdminModel.findOne({email})
 
-    if(!user){
+    if(!admin){
         return res.status(400).json({message:"Email not found"})
     }
 
-    const isMatching = await bcrypt.compare("password",user.password)
+    const isMatching = await bcrypt.compare("password",admin.password)
 
 
     if(!isMatching){
         return res.status(400).json({message:"Incorrect password"})
     }
 
-    if(!user.isActivated){
+    if(!admin.isActivated){
         return res.status(400).json({message:"Account not yet activated.Please activate before login"})
     }
 

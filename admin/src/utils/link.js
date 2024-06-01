@@ -13,5 +13,10 @@ export const link = [
         id:3,
         name:"Add Admin",
         path:"/addadmin"
+    },
+    {
+        id:4,
+        name:"Login",
+        path:"/login"
     }
 ]

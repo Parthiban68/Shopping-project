@@ -23,7 +23,19 @@ function EditItems() {
 
       console.log(dataForEdit);
   return (
-    <div>EditItems</div>
+    <div>
+      {dataForEdit.map((details)=>(
+        <div key={details._id} className="w-full h-screen flex flex-col  bg-gray-50 sm:px-4">
+          <div className="w-full space-y-6 text-gray-600 sm:max-w-md">
+            <form>
+            <h1>{details.shoemodel}</h1>
+            </form>
+           
+        </div>
+        </div>
+
+      ))}
+    </div>
   )
 }
 
