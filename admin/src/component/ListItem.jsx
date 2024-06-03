@@ -1,10 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useAuth } from './Auth'
 
-function ListItem() {
+function ListItem(props) {
     const [data, setData] = useState([])
     const [update, setUpdate]=useState()
+
+    const Auth = useAuth()
 
     useEffect(() => {
         items()
@@ -19,7 +22,14 @@ function ListItem() {
             console.log(err);
         }
     }
-    console.log(data);
+
+    // const deleteit = async () =>{
+    //     console.log(update);
+    //     // try{
+    //     //     const response = await axios.delete(`http://localhost:3001/product/delete`)
+    //     // }
+    // }
+    console.log(data._id);
     return (
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
             <div className="items-start justify-between md:flex">
@@ -63,7 +73,9 @@ function ListItem() {
                                         </NavLink>
                                     </td>
                                     <td className="text-center  whitespace-nowrap">
-                                        <button className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-100 rounded-lg">
+                                        <button 
+                                        onClick={()=>setUpdate(`${item._id}`)}
+                                        className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-100 rounded-lg">
                                             Delete
                                         </button>
                                     </td>

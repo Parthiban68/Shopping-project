@@ -44,4 +44,15 @@ exports.editItem = async (req, res) =>{
     }
 }
 
+exports.productdelete = async (req,res) =>{
+    try{
+        const {_id} = req.body
+    await ProductModel.findByIdAndDelete({_id})
+    res.status(200).json({message:"Product deleted successfully"})
+    }
+    catch(error){
+        res.status(400).json({message:"Product can't be deleted"})
+    }
+}
+
 

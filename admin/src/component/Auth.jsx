@@ -11,7 +11,7 @@ export default function AuthProvider (props) {
     const logout = () =>{
         setUser()
     }
-
+    // console.log(user);
     return(
         <AuthContext.Provider value={{user,login,logout}}>
             {props.children}

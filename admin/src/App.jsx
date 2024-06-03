@@ -17,8 +17,8 @@ function App() {
     <Navbar/>
     <Routes>
       <Route path='/additems' element={<RequiredAuth><AddItems/></RequiredAuth>}/>
-      <Route path='/listitems' element={<ListItem/>}/>
-      <Route path='/addadmin' element={<AddAdmin/>}/>
+      <Route path='/listitems' element={<RequiredAuth><ListItem/></RequiredAuth>}/>
+      <Route path='/addadmin' element={<RequiredAuth><AddAdmin/></RequiredAuth>}/>
       <Route path='/edititems/:_id' element={<EditItems/>}/>
       <Route path="/login" element={<Login/>}/>
     </Routes>

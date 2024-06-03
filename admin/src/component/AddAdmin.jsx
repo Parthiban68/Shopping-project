@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useAuth } from './Auth'
 
-function AddAdmin() {
+function AddAdmin(props) {
     const [adminname, setAdminname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -10,19 +11,22 @@ function AddAdmin() {
         email,
         password
     }
+    const Auth = useAuth()
     const addadmin = (e) =>{
         e.preventDefault()
-
         try{
-            const response = axios.post(`http://localhost:3001/admin/adminsignup`,{adminname,email,password})
-            console.log(response.data);
+            if(Auth.user.email === "parthiba1268@gmail.com"){
+                const response = axios.post(`http://localhost:3001/admin/adminsignup`,{adminname,email,password})
+                console.log(response.data);
+            }else{
+                console.log("Access denied");
+            }
+         
         }catch(error){
             console.log(error);
         }
     }
-    // console.log(adminname);
-    // console.log(email);
-    // console.log(password);
+
     return (
         <div>
             <main className="w-full h-screen flex flex-col items-center bg-gray-50 sm:px-4">

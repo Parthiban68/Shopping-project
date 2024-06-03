@@ -93,6 +93,6 @@ exports.adminsignin = async(req,res)=>{
         return res.status(400).json({message:"Account not yet activated.Please activate before login"})
     }
 
-    return res.status(200).json({message:"Login Successfull", user})
+    return res.status(200).json({message:"Login Successfull", admin})
 
 }
