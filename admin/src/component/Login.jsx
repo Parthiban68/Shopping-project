@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useAuth } from './Auth'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
+
 
 function Login() {
     
@@ -17,18 +19,19 @@ function Login() {
         e.preventDefault()
         try{
            const response = await axios.post(`http://localhost:3001/admin/adminsignin`,{email,password})
-           setadmindata(response.data.admin)
+           setadmindata(response.data.admin)    
            if(admindata){
                 auth.login({name:response.data.admin.adminname,email:response.data.admin.email})
+                toast.success(response.data.message)
                 Navigate("/additems")
            }
            else{
             Navigate('/login')
            }
-           console.log(response.data.message);
+          
         }
         catch(error){
-            console.log(error);
+            toast.error(error.response.data.message)
 
         }
     }

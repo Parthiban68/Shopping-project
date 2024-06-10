@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useAuth } from './Auth'
+import { useAuth } from './Auth';
+import toast from 'react-hot-toast';
 
 function ListItem(props) {
     const [data, setData] = useState([])
@@ -23,12 +24,22 @@ function ListItem(props) {
         }
     }
 
-    // const deleteit = async () =>{
-    //     console.log(update);
-    //     // try{
-    //     //     const response = await axios.delete(`http://localhost:3001/product/delete`)
-    //     // }
-    // }
+    const deleteitem = async (productid) =>{
+    
+            const _id = productid;
+            console.log(_id);
+        
+            const response = await axios.delete(`http://localhost:3001/product/delete`,{ _id});
+            
+            if(response.data.success){
+                toast.success(response.data.mssage)
+            }else{
+                toast.error(response.data.message)
+            }
+
+            console.log(error);
+    
+    }
     console.log(data._id);
     return (
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
@@ -74,7 +85,7 @@ function ListItem(props) {
                                     </td>
                                     <td className="text-center  whitespace-nowrap">
                                         <button 
-                                        onClick={()=>setUpdate(`${item._id}`)}
+                                        onClick={()=>deleteitem(item._id)}
                                         className="py-2 leading-none px-3 font-medium text-red-600 hover:text-red-500 duration-150 hover:bg-gray-100 rounded-lg">
                                             Delete
                                         </button>

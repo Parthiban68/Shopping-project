@@ -8,11 +8,14 @@ import EditItems from './component/EditItems'
 import Login from './component/Login'
 import AuthProvider from './component/Auth'
 import RequiredAuth from './component/RequiredAuth'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 function App() {
 
   return (
     <BrowserRouter>
+    <Toaster position="top-right" reverseOrder={false}/>
     <AuthProvider>
     <Navbar/>
     <Routes>
