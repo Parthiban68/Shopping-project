@@ -12,6 +12,8 @@ import AddCart from './component/AddCart'
 import Login from './component/Login'
 import AuthProvider  from "./component/Auth";
 import ProductDetails from './component/ProductDetails'
+import Footer from './component/Footer'
+
 
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
     <AuthProvider>
     <NavBar/>
     <Routes>
-      <Route path='/' element={<Home/>}/>
+      <Route path='/' element={<Home/>}/>  
       <Route path='/men' element={<Men/>}/>
       <Route path="/women" element={<Women/>}/>
       <Route path='/kids' element={<Kids/>}/>
@@ -32,6 +34,8 @@ function App() {
       <Route path='/addcart' element={<AddCart/>}/>
       <Route path='/pd/:_id' element={<ProductDetails/>}/>
     </Routes>
+ 
+    <Footer/>
     </AuthProvider>
     </BrowserRouter>
   )
