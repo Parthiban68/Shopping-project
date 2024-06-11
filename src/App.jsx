@@ -12,15 +12,13 @@ import AddCart from './component/AddCart'
 import Login from './component/Login'
 import AuthProvider  from "./component/Auth";
 import ProductDetails from './component/ProductDetails'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
   return (
     <BrowserRouter>
     <AuthProvider>
-      <ToastContainer/>
     <NavBar/>
     <Routes>
       <Route path='/' element={<Home/>}/>

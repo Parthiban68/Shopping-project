@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from "./Auth";
-import { toast } from 'react-toastify';
+
 
 
 const Login = () => {
@@ -25,7 +25,6 @@ const Login = () => {
             if (res.status === 200 && res.data.message == "Login successful") {
               auth.login({ name: res.data.user.name, email: res.data.user.email });
               if (res.data.user.email === "parthiban1268@gmail.com") {
-                // toast.success
                 navigate("/mens");
               } else {
                 navigate("/mens");
