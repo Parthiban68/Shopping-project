@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 function NavBar() {
     const [active, setActive] = useState("")
     return (
-        <nav className='bg-red-30 w-full h-[100px] sticky m-0 pt-[50px]'>
+        <nav className='bg-red-30 w-full h-[100px] sticky m-0 pt-[30px]'>
             <div className='flex items-center container'>
                 <div>
              //log

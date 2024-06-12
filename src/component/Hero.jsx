@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 function Hero() {
     const shoe = useGLTF('./nike/scene.gltf')
     return (
-        <div class="grid grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
             <div className='w-100% h-[545px] mt-[46px]'>
                 <div className='mt-[150px] px-[50px]'>
                     <h1 className='text-[60px] font-bold cursor-pointer flex'>WE SERVE EPIC</h1>
@@ -25,5 +25,8 @@ function Hero() {
         </div>
     )
 }
-
+{/* <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+  <div className="h-32 rounded-lg bg-gray-200"></div>
+  <div className="h-32 rounded-lg bg-gray-200"></div>
+</div> */}
 export default Hero

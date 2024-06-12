@@ -34,7 +34,6 @@ function App() {
       <Route path='/addcart' element={<AddCart/>}/>
       <Route path='/pd/:_id' element={<ProductDetails/>}/>
     </Routes>
- 
     <Footer/>
     </AuthProvider>
     </BrowserRouter>

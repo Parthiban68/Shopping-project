@@ -6,7 +6,7 @@ function Popup() {
     <img
       alt=""
       src="https://images.unsplash.com/photo-1611510338559-2f463335092c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
-      className="h-32 w-full object-cover md:h-full"
+      className="h-full w-full object-cover md:h-full"
     />
   
     <div className="p-4 text-center sm:p-6 md:col-span-2 lg:p-8">
