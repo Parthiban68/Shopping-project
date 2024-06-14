@@ -25,14 +25,12 @@ function Footer() {
 
         <ul className="mt-8 space-y-1 text-sm text-gray-700">
           <li>Monday to Friday: 10am - 5pm</li>
-          <li>Weekend: 10am - 3pm</li>
+          {/* <li>Weekend: 10am - 3pm</li> */}
         </ul>
 
         <ul className="mt-8 flex gap-6">
           <li>
             <NavLink
-              rel="noreferrer"
-              target="_blank"
               className="text-gray-700 transition hover:opacity-75"
             >
               <span className="sr-only">Facebook</span>
@@ -49,12 +47,10 @@ function Footer() {
 
           <li>
             <NavLink
-              rel="noreferrer"
-              target="_blank"
               className="text-gray-700 transition hover:opacity-75"
             >
               <span className="sr-only">Instagram</span>
-
+              
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   fill-rule="evenodd"
@@ -67,8 +63,6 @@ function Footer() {
 
           <li>
             <NavLink
-              rel="noreferrer"
-              target="_blank"
               className="text-gray-700 transition hover:opacity-75"
             >
               <span className="sr-only">Twitter</span>
@@ -105,7 +99,7 @@ function Footer() {
             </li>
 
             <li>
-              <NavLink  class="text-gray-700 transition hover:opacity-75">Sports</NavLink>
+              <NavLink className="text-gray-700 transition hover:opacity-75">Sports</NavLink>
             </li>
           </ul>
         </div>
