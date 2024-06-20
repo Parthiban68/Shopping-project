@@ -14,19 +14,19 @@ function Hero() {
                 </div>
             </div>
             <div className='w-100% h-[545px] '>
-                <Canvas shadows frameloop='demand' gl={{ preserveDrawingBuffer: true }} camera={{ fov: 45, near: 0.1, far: 200, position: [-4, 3, 6]}}>  
-                        <ambientLight intensity={2.05} />
-                        <directionalLight position={[0, 0, 0.05]} />                    
-                        <OrbitControls autoRotate enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
-                        <primitive object={shoe.scene} scale={3.0} position-y={0} rotation-y={0} />
+           
+          <Canvas shadows frameloop="demand" gl={{ preserveDrawingBuffer: true }} camera={{ fov: 45, near: 0.1, far: 200, position: [-4, 3, 6] }}>  
+          <Suspense fallback={<div>Loading...</div>}>
+            <ambientLight intensity={2.05} />
+            <directionalLight position={[0, 0, 0.05]} />                    
+            <OrbitControls autoRotate enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+            <primitive object={shoe.scene} scale={3.0} position-y={0} rotation-y={0} />
+        </Suspense>
+        <Preload all/>
+          </Canvas>
 
-                </Canvas>
             </div>
         </div>
     )
 }
-{/* <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-  <div className="h-32 rounded-lg bg-gray-200"></div>
-  <div className="h-32 rounded-lg bg-gray-200"></div>
-</div> */}
 export default Hero

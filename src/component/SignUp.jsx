@@ -69,6 +69,7 @@ function SignUp() {
 
                                 <input
                                     type="text"
+                                    required
                                     placeholder="Enter Your Username"
                                     onChange={changename} value={username}
                              className="mt-1 w-full rounded-md px-3 py-2 border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -80,6 +81,7 @@ function SignUp() {
 
                                 <input
                                     type="email"
+                                    required
                                     placeholder="Enter Your Email"
                                     onChange={changeemail} value={email}
                                     className="mt-1 w-full px-3 py-2 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -91,6 +93,7 @@ function SignUp() {
 
                                 <input
                                     type="password"
+                                    required
                                     placeholder="Enter Your password"
                                     onChange={changepassword} value={password}
                                     className="mt-1 w-full px-3 py-2 rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
@@ -101,6 +104,7 @@ function SignUp() {
                                 <label for="MarketingAccept" className="flex gap-4">
                                     <input
                                         type="checkbox"
+                                        required
                                         name="marketing_accept"
                                         className="size-5 rounded-md border-gray-200 bg-white shadow-sm"
                                     />

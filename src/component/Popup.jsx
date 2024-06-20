@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Popup() {
   return (
@@ -18,15 +19,14 @@ function Popup() {
         <span className="mt-2 block text-sm">On your next order over $50</span>
       </h2>
   
-      <a
+      <NavLink
         className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white"
-        href="#"
       >
         Get Discount
-      </a>
+      </NavLink>
   
       <p className="mt-8 text-xs font-medium uppercase text-gray-400">
-        Offer valid until 24th March, 2021 *
+        Offer valid until 24th March, 2024 *
       </p>
     </div>
   </section>
