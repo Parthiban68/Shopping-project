@@ -13,6 +13,7 @@ import Login from './component/Login'
 import AuthProvider  from "./component/Auth";
 import ProductDetails from './component/ProductDetails'
 import Footer from './component/Footer'
+import User from './component/User'
 
 
 
@@ -33,6 +34,7 @@ function App() {
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/addcart' element={<AddCart/>}/>
       <Route path='/pd/:_id' element={<ProductDetails/>}/>
+      <Route path='/profile' element={<User/>}/>
     </Routes>
     <Footer/>
     </AuthProvider>

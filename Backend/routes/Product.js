@@ -8,4 +8,6 @@ route.get('/listitem',adminlist)
 route.get(`/pd/:_id`,productDetails)
 route.get(`/ed/:_id`,editItem)
 route.delete('/delete',productdelete)
+
+
 module.exports = route

@@ -13,7 +13,7 @@ const Login = () => {
     const [errmessage, seterrmessage] = useState('')
     const [userlist, setuserlist] = useState([])
 
-    const auth = useAuth()
+    const {login} = useAuth()
     const navigate = useNavigate();
 
 
@@ -23,12 +23,10 @@ const Login = () => {
             .then((res) => {
                 console.log(res);
                 if (res.status === 200 && res.data.message == "Login successful") {
-                    auth.login({ name: res.data.user.name, email: res.data.user.email });
-                    if (res.data.user.email === "parthiban1268@gmail.com") {
-                        navigate("/mens");
-                    } else {
-                        navigate("/mens");
-                    }
+                    login(res.data.token, res.data.user)
+                }
+                else{
+                    navigate("/signup")
                 }
             })
             .catch((err) => {

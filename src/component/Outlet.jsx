@@ -25,11 +25,11 @@ function Outlet() {
                     <i class="fa-solid fa-location-dot text-white"></i>
                     <p className="text-lg text-white">
                       D,11 Railway Gate Jms Opposite
-                    </p>
-                    <p className="text-lg text-white">
+                    {/* </p>
+                    <p className="text-lg text-white"> */}
                       Madukkaria main road
-                    </p>
-                    <p className="text-lg text-white">
+                    {/* </p>
+                    <p className="text-lg text-white"> */}
                       coimbaotre-641021
                     </p>
                   </div>

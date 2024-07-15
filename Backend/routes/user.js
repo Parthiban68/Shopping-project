@@ -7,6 +7,4 @@ route.post("/signup", signup)
 route.get(`/activate/:activationCode`, activate)
 route.post('/signin', signin)
 
-
-
 module.exports = route

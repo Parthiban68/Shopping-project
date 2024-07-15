@@ -4,7 +4,6 @@ exports.mens = (req, res) => {
     const product = ProductModel(req.body)
     product.save()
     res.status(200).json({ message: "data stored" })
-
 }
 
 exports.front = async (req, res) => {
@@ -54,3 +53,5 @@ exports.productdelete = async (req,res) =>{
         res.status(400).json({message:"Product can't be deleted"})
     }
 }
+
+

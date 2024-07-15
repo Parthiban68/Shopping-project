@@ -28,5 +28,10 @@ export const link = [
         id:6,
         name:"Outlet",
         path:"/outlet"
+    },
+    {
+        id:7,
+        name:"profile",
+        path:"/profile"
     }
 ]
