@@ -16,7 +16,13 @@ export const link = [
     },
     {
         id:4,
+        name:"AddOutlet",
+        path:"/addoutlet"
+    },
+    {
+        id:5,
         name:"Login",
         path:"/login"
-    }
+    },
+    
 ]

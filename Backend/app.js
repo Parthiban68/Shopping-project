@@ -9,8 +9,10 @@ const bodyparser = require('body-parser')
 const cors = require('cors')
 
 
+
 app.use(cors())
 app.use(bodyparser.json())
+
 
 db()
 
@@ -23,6 +25,7 @@ app.use("/product",product)
 //admin login & dashboard
 app.use('/admin',admin)
 
+app.use("/images", express.static("uploads"));
 // test url
 app.get('/',(req,res)=>{
     res.send("home page")
