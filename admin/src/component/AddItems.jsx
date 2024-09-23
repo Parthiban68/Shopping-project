@@ -19,25 +19,97 @@ function AddItems() {
 
 
   return (
-    <div className='w-[500px] h-[500px]'>
-      <form onSubmit={additem}>
-        <label>Shoe Model</label>
-        <input type='text' onChange={(e) => setShoeModel(e.target.value)} value={shoemodel}  /><br />
-        <label>Gender</label>
-        <input type='text' onChange={(e) => setGender(e.target.value)} value={gender} /><br />
-        <label>MRP</label>
-        <input type='number' onChange={(e)=> setMrp(e.target.value)} value={mrp} /><br />
-        <label>Description</label>
-        <textarea name="descrp" rows="10" cols="30" onChange={(e)=> setDescription(e.target.value)} value={description} ></textarea><br />
-        <label>Color</label>
-        <input type='text' onChange={(e)=> setColor(e.target.value)} value={color} /><br />
-        <label>Product Information</label>
-        <textarea name="prdinfo" rows="10" cols="30" onChange={(e)=> setPrdinfo(e.target.value)} value={prdinfo} ></textarea><br />
-        <label>Poster Url</label>
-        <input type='text' onChange={(e)=> setPoster(e.target.value)} value={poster} />
-        <input type='Submit' value={"Upload"} className='bg-orange-600 px-3 py-1 rounded-2xl' />
-      </form>
-    </div>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+  <div className='w-full max-w-md p-6 bg-white rounded-lg shadow-lg'>
+    <form onSubmit={additem}>
+      <h2 className="text-2xl font-bold mb-4 text-center">Add Shoe Item</h2>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Shoe Model</label>
+        <input
+          type='text'
+          onChange={(e) => setShoeModel(e.target.value)}
+          value={shoemodel}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Gender</label>
+        <input
+          type='text'
+          onChange={(e) => setGender(e.target.value)}
+          value={gender}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">MRP</label>
+        <input
+          type='number'
+          onChange={(e) => setMrp(e.target.value)}
+          value={mrp}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Description</label>
+        <textarea
+          name="descrp"
+          rows="4"
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        ></textarea>
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Color</label>
+        <input
+          type='text'
+          onChange={(e) => setColor(e.target.value)}
+          value={color}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Product Information</label>
+        <textarea
+          name="prdinfo"
+          rows="4"
+          onChange={(e) => setPrdinfo(e.target.value)}
+          value={prdinfo}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        ></textarea>
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Poster Url</label>
+        <input
+          type='text'
+          onChange={(e) => setPoster(e.target.value)}
+          value={poster}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300"
+          required
+        />
+      </div>
+
+      <button type='submit' className='w-full bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-500 transition duration-200'>
+        Upload
+      </button>
+    </form>
+  </div>
+</div>
+
   )
 }
 

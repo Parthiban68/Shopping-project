@@ -49,18 +49,78 @@ const AddOutlet = () => {
   }
   return (
     <div>
-      <form onSubmit={handleuploade}>
-        <input type="file" onChange={(e) => { setUploadFile(e.target.files[0]) }} />
-        <lable>CountryName</lable>
-        <input type="text" onChange={handlechange} value={data.countryname} name='countryname' />
-        <label>Street</label>
-        <input type="text" onChange={handlechange} value={data.street} name='street' />
-        <label>area</label>
-        <input type="text" onChange={handlechange} value={data.area} name='area' />
-        <label>State</label>
-        <input type="text" onChange={handlechange} value={data.state} name='state' />
-        <button type='submit'>Uploade</button>
-      </form>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-600">
+  <div className='w-full max-w-md p-8 bg-white rounded-lg shadow-lg'>
+    <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Upload Details</h2>
+    
+    <form onSubmit={handleuploade}>
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Upload File</label>
+        <input 
+          type="file" 
+          onChange={(e) => setUploadFile(e.target.files[0])} 
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Country Name</label>
+        <input 
+          type="text" 
+          onChange={handlechange} 
+          value={data.countryname} 
+          name='countryname' 
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300" 
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Street</label>
+        <input 
+          type="text" 
+          onChange={handlechange} 
+          value={data.street} 
+          name='street' 
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300" 
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">Area</label>
+        <input 
+          type="text" 
+          onChange={handlechange} 
+          value={data.area} 
+          name='area' 
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300" 
+          required
+        />
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700">State</label>
+        <input 
+          type="text" 
+          onChange={handlechange} 
+          value={data.state} 
+          name='state' 
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300" 
+          required
+        />
+      </div>
+
+      <button 
+        type='submit' 
+        className='w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition duration-200'
+      >
+        Upload
+      </button>
+    </form>
+  </div>
+</div>
+
       {out.map((list)=>(
         <div>
         <img src={list.image} alt="" />

@@ -26,6 +26,7 @@ app.use("/product",product)
 app.use('/admin',admin)
 
 app.use("/images", express.static("uploads"));
+
 // test url
 app.get('/',(req,res)=>{
     res.send("home page")

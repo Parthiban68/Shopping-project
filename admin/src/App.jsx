@@ -20,9 +20,9 @@ function App() {
     <AuthProvider>
     <Navbar/>
     <Routes>
-      <Route path='/additems' element={<RequiredAuth><AddItems/></RequiredAuth>}/>
-      <Route path='/listitems' element={<RequiredAuth><ListItem/></RequiredAuth>}/>
-      <Route path='/addadmin' element={<RequiredAuth><AddAdmin/></RequiredAuth>}/>
+      <Route path='/additems' element={<AddItems/>}/>
+      <Route path='/listitems' element={<ListItem/>}/>
+      <Route path='/addadmin' element={<AddAdmin/>}/>
       <Route path='/edititems/:_id' element={<EditItems/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path='/addoutlet' element={<AddOutlet/>}/>
