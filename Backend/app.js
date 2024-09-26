@@ -8,9 +8,13 @@ const app = express()
 const bodyparser = require('body-parser')
 const cors = require('cors')
 
-
-
-app.use(cors())
+const corsOption = {
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 200,
+}
+app.use(cors(corsOption));
 app.use(bodyparser.json())
 
 
