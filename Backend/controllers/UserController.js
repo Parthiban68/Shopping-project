@@ -18,7 +18,7 @@ exports.signup = async (req, res) => {
     const activationCode = uuidv4()
 
     const salt = await bcrypt.genSalt(10)
-    const hashpassword = await bcrypt.hash("password", salt)
+    const hashpassword = await bcrypt.hash(password, salt)
 
     user = UserModel({
         username,
@@ -63,7 +63,6 @@ exports.signup = async (req, res) => {
 
 exports.activate = async (req, res) => {
     const { activationCode } = req.params
-    console.log(activationCode)
     let user = await UserModel.findOne({ activationCode })
     if (!user) {
         return res.status(500).json({ message: "cannot send activation link" })
@@ -83,9 +82,8 @@ exports.signin = async (req, res) => {
         return res.status(400).json({ message: "Email not found" })
     }
 
-    const isMatching = await bcrypt.compare("password", user.password)
+    const isMatching = await bcrypt.compare(password, user.password)
 
-    console.log(isMatching);
     if (!isMatching) {
         return res.status(400).json({ message: "Incorrect password" })
     }
