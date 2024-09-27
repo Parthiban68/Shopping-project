@@ -1,9 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useAuth } from './Auth'
-import toast from 'react-hot-toast'
+// import toast from 'react-hot-toast'
 
-function AddAdmin(props) {
+function AddAdmin() {
     const [adminname, setAdminname] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -19,9 +19,11 @@ function AddAdmin(props) {
             if(Auth.user.email === "parthiba1268@gmail.com"){
                 const response = axios.post(`http://localhost:3001/admin/adminsignup`,{adminname,email,password})
                 console.log(response.data);
-                toast.success(response.data.message)
+                // toast.success(response.data.message)
             }else{
-                toast.error("Access denied");
+                // toast.error("Access denied");
+                console.log("Access denied");
+                
             }
          
         }catch(error){

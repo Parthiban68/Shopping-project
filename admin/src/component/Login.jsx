@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useAuth } from './Auth'
 import { useNavigate } from 'react-router-dom'
-import toast from 'react-hot-toast'
+// import toast from 'react-hot-toast'
 
 
 function Login() {
@@ -22,7 +22,7 @@ function Login() {
            setadmindata(response.data.admin)    
            if(admindata){
                 auth.login({name:response.data.admin.adminname,email:response.data.admin.email})
-                toast.success(response.data.message)
+                // toast.success(response.data.message)
                 Navigate("/additems")
            }
            else{
@@ -31,8 +31,9 @@ function Login() {
           
         }
         catch(error){
-            toast.error(error.response.data.message)
-
+            // toast.error(error.response.data.message)
+            console.log(error.response.data.message);
+            
         }
     }
 

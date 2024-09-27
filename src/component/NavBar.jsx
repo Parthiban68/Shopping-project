@@ -16,7 +16,7 @@ function NavBar() {
                 <div className='text-center md:text-left'>
                     {/* Logo */}
                 </div>
-                <div className='flex-1 md:flex md:justify-between md:px-[230px] px-4'>
+                <div className='flex-1 md:flex md:justify-between md:px-[200px] px-4'>
                     <div className='hidden md:flex space-x-4'>
                         {link.map((link) => (
                             <NavLink key={link.id} to={link.path}

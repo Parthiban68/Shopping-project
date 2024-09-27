@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAuth } from './Auth';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 
 function ListItem(props) {
     const [data, setData] = useState([])
@@ -31,11 +31,11 @@ function ListItem(props) {
         
             const response = await axios.delete(`http://localhost:3001/product/delete`,{ _id});
             
-            if(response.data.success){
-                toast.success(response.data.mssage)
-            }else{
-                toast.error(response.data.message)
-            }
+            // if(response.data.success){
+            //     toast.success(response.data.mssage)
+            // }else{
+            //     toast.error(response.data.message)
+            // }
 
             console.log(error);
     
