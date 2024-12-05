@@ -24,6 +24,8 @@ function Men() {
     }
   };
   
+  console.log(data);
+  
 
   return (
     <div className="bg-white ">
